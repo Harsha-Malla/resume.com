@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #222;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.console-mode {
+  background-color: #001100 !important;
+  color: #00ff00 !important;
+  font-family: monospace !important;
+}
+
+/* Header */
+header {
+  background: #0a9396;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 0 0 2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideBounce 1s ease;
+}
+
+@keyframes slideBounce {
+  0% { transform: translateY(-50px); opacity: 0; }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+}
+
+/* Base Navbar Styles */
+.navbar {
+  background-color: #0a9396;
+  padding: 0.75rem 1rem;
+}
+
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background: #0096c7;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #00b4d8;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #0077b6;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+    max-height: 1000px;
+  }
+
+  .navbar a {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Keep the rest of your CSS as-is... */
